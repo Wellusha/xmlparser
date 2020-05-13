@@ -60,7 +60,3 @@ Content-Type: application/json;charset=UTF-8
 Transfer-Encoding: chunked
 Date: Mon, 01 Sep 2019 12:00:26 GMT
 [2,3]
-
----------------------------
-Проект нужно разместить на GitHub и прислать ссылку.
-Время на решение до двух дней (хотя решается по факту за пол дня максимум).
