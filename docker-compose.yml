@@ -1,0 +1,25 @@
+version: "3.1"
+# https://docs.docker.com/compose/compose-file/
+
+services:
+
+  db:
+    image: postgres
+    container_name: postgress_db
+    restart: always
+    ports:
+    - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: 1234
+    volumes:
+    - schemas:/var/lib/postgresql/data
+
+  adminer:
+    image: adminer
+    container_name: adminer
+    restart: always
+    ports:
+      - 1234:8080
+
+volumes:
+  schemas:
