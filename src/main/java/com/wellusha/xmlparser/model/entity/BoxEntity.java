@@ -2,19 +2,15 @@ package com.wellusha.xmlparser.model.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.List;
 
 @Entity
-@Table(name = "boxes")
+@Table(name = "box")
 public class BoxEntity implements Serializable {
     @Id
     private Integer id;
 
-    @OneToOne
-    private BoxEntity box;
-
-    @OneToMany
-    private List<ItemEntity> items;
+    @Column(name = "contained_in")
+    private Integer containedIn;
 
     public Integer getId() {
         return id;
@@ -24,19 +20,11 @@ public class BoxEntity implements Serializable {
         this.id = id;
     }
 
-    public BoxEntity getBox() {
-        return box;
+    public Integer getContainedIn() {
+        return containedIn;
     }
 
-    public void setBox(BoxEntity box) {
-        this.box = box;
-    }
-
-    public List<ItemEntity> getItems() {
-        return items;
-    }
-
-    public void setItems(List<ItemEntity> items) {
-        this.items = items;
+    public void setContainedIn(Integer containedIn) {
+        this.containedIn = containedIn;
     }
 }

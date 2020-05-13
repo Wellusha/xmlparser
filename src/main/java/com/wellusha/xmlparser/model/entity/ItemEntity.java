@@ -1,34 +1,33 @@
 package com.wellusha.xmlparser.model.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "items")
+@Table(name = "item")
 public class ItemEntity implements Serializable {
     @Id
-    private Long id;
-    @OneToOne
-    private BoxEntity box;
+    private Integer id;
+
+    @Column(name = "contained_in")
+    private Integer containedIn;
+
     private String color;
 
-    public BoxEntity getBox() {
-        return box;
-    }
-
-    public void setBox(BoxEntity box) {
-        this.box = box;
-    }
-
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Integer getContainedIn() {
+        return containedIn;
+    }
+
+    public void setContainedIn(Integer containedIn) {
+        this.containedIn = containedIn;
     }
 
     public String getColor() {

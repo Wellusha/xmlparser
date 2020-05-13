@@ -1,0 +1,36 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: Wellusha
+      changes:
+        - createTable:
+            tableName: BOX
+            columns:
+              - column:
+                  name: ID
+                  type: int
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: CONTAINED_IN
+                  type: int
+        - createTable:
+            tableName: ITEM
+            columns:
+              - column:
+                  name: ID
+                  type: int
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: CONTAINED_IN
+                  type: int
+              - column:
+                  name: COLOR
+                  type: varchar(100)
+        - addForeignKeyConstraint:
+            baseTableName: ITEM
+            baseColumnNames: CONTAINED_IN
+            constraintName: fk_item_box
+            referencedTableName: BOX
+            referencedColumnNames: ID
