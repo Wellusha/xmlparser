@@ -1,6 +1,8 @@
 package com.wellusha.xmlparser.model;
 
-public class ItemsInBoxReq {
+import java.io.Serializable;
+
+public class ItemsInBoxReq implements Serializable {
     private Integer box;
     private String color;
 

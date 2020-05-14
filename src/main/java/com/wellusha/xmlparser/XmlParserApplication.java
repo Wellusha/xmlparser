@@ -22,7 +22,7 @@ public class XmlParserApplication implements CommandLineRunner {
     }
 
     @Override
-    public void run(String... args) throws Exception {
+    public void run(String... args) {
         // Предполагаем, что имя файла в первом параметре
         if (args.length > 0)
             parseAndUpdateService.parseAndUpdate(args[0]);
